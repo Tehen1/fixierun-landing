@@ -4,14 +4,18 @@ import { useAuth } from '@/frontend/context/auth'
 import { Button } from './button'
 
 export function ConnectButton() {
-  const { isAuthenticated, address, connect, disconnect, formatAddress } = useAuth()
+  const { isConnected, address, connect, disconnect } = useAuth()
+
+  const formatAddress = (address: string) => {
+    return `${address.slice(0, 6)}...${address.slice(-4)}`
+  }
 
   return (
     <Button
       variant="primary"
-      onClick={isAuthenticated ? disconnect : connect}
+      onClick={isConnected ? disconnect : connect}
     >
-      {isAuthenticated ? formatAddress(address!) : 'Connecter le Wallet'}
+      {isConnected ? formatAddress(address!) : 'Connecter le wallet'}
     </Button>
   )
 }

@@ -4,7 +4,21 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import BikeDetailModal from './BikeDetailModal'
 
-const bikes = [
+interface Bike {
+  id: number
+  name: string
+  description: string
+  rarity: string
+  stats: {
+    speed: number
+    acceleration: number
+    handling: number
+    battery: number
+  }
+  price: string
+}
+
+const bikes: Bike[] = [
   {
     id: 1,
     name: 'FixieRun Pro',
@@ -47,7 +61,7 @@ const bikes = [
 ]
 
 export default function BikeShowcase() {
-  const [selectedBike, setSelectedBike] = useState(null)
+  const [selectedBike, setSelectedBike] = useState<Bike | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (

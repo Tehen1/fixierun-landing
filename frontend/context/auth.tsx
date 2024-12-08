@@ -1,35 +1,40 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { formatAddress } from '@/lib/utils'
+
+declare global {
+  interface Window {
+    ethereum?: any
+  }
+}
 
 interface AuthContextType {
-  isAuthenticated: boolean
   address: string | null
-  balance: string
-  chainId: number | null
+  chainId: string | null
+  balance: string | null
+  isConnecting: boolean
+  isConnected: boolean
   connect: () => Promise<void>
-  disconnect: () => Promise<void>
-  formatAddress: (address: string) => string
+  disconnect: () => void
 }
 
 const AuthContext = createContext<AuthContextType>({
-  isAuthenticated: false,
   address: null,
-  balance: '0',
   chainId: null,
+  balance: null,
+  isConnecting: false,
+  isConnected: false,
   connect: async () => {},
-  disconnect: async () => {},
-  formatAddress: () => '',
+  disconnect: () => {}
 })
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [address, setAddress] = useState<string | null>(null)
-  const [balance, setBalance] = useState('0')
-  const [chainId, setChainId] = useState<number | null>(null)
+  const [chainId, setChainId] = useState<string | null>(null)
+  const [balance, setBalance] = useState<string | null>(null)
+  const [isConnecting, setIsConnecting] = useState(false)
+  const [isConnected, setIsConnected] = useState(false)
 
-  // Temporarily simplified wallet connection
   const connect = async () => {
     try {
       if (typeof window.ethereum !== 'undefined') {
@@ -37,59 +42,77 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const chainId = await window.ethereum.request({ method: 'eth_chainId' })
         const balance = await window.ethereum.request({
           method: 'eth_getBalance',
-          params: [accounts[0], 'latest'],
+          params: [accounts[0], 'latest']
         })
 
         setAddress(accounts[0])
-        setChainId(parseInt(chainId, 16))
+        setChainId(chainId)
         setBalance(balance)
-        setIsAuthenticated(true)
+        setIsConnected(true)
       } else {
         console.log('Please install MetaMask!')
       }
     } catch (error) {
-      console.error('Error connecting wallet:', error)
+      console.error('Error connecting to MetaMask:', error)
     }
   }
 
-  const disconnect = async () => {
+  const disconnect = () => {
     setAddress(null)
     setChainId(null)
-    setBalance('0')
-    setIsAuthenticated(false)
+    setBalance(null)
+    setIsConnected(false)
   }
 
   useEffect(() => {
-    // Check if user was previously connected
     const checkConnection = async () => {
       if (typeof window.ethereum !== 'undefined') {
-        const accounts = await window.ethereum.request({ method: 'eth_accounts' })
-        if (accounts.length > 0) {
-          await connect()
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+          if (accounts.length > 0) {
+            const chainId = await window.ethereum.request({ method: 'eth_chainId' })
+            const balance = await window.ethereum.request({
+              method: 'eth_getBalance',
+              params: [accounts[0], 'latest']
+            })
+
+            setAddress(accounts[0])
+            setChainId(chainId)
+            setBalance(balance)
+            setIsConnected(true)
+          }
+        } catch (error) {
+          console.error('Error checking connection:', error)
         }
       }
     }
 
     checkConnection()
 
-    // Setup event listeners
     if (typeof window.ethereum !== 'undefined') {
       window.ethereum.on('accountsChanged', (accounts: string[]) => {
         if (accounts.length > 0) {
-          connect()
+          setAddress(accounts[0])
+          setIsConnected(true)
         } else {
           disconnect()
         }
       })
 
-      window.ethereum.on('chainChanged', () => {
-        window.location.reload()
+      window.ethereum.on('chainChanged', (chainId: string) => {
+        setChainId(chainId)
+      })
+
+      window.ethereum.on('disconnect', () => {
+        disconnect()
       })
     }
 
     return () => {
       if (typeof window.ethereum !== 'undefined') {
-        window.ethereum.removeAllListeners()
+        window.ethereum.removeListener('accountsChanged', () => {})
+        window.ethereum.removeListener('chainChanged', () => {})
+        window.ethereum.removeListener('disconnect', () => {})
       }
     }
   }, [])
@@ -97,13 +120,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   return (
     <AuthContext.Provider
       value={{
-        isAuthenticated,
         address,
-        balance,
         chainId,
+        balance,
+        isConnecting,
+        isConnected,
         connect,
-        disconnect,
-        formatAddress,
+        disconnect
       }}
     >
       {children}
