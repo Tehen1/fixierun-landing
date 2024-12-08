@@ -5,6 +5,17 @@ import { Button } from './ui/button'
 export default function Hero() {
   return (
     <div className="relative isolate px-6 pt-14 lg:px-8">
+      {/* Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-30 -z-20"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/fixierun-preview.webm" type="video/webm" />
+      </video>
+
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
@@ -30,6 +41,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Gradient effect */}
       <div
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true"
