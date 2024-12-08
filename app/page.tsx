@@ -5,13 +5,19 @@ import Roadmap from '@/components/Roadmap'
 import Tokenomics from '@/components/Tokenomics'
 import Team from '@/components/Team'
 import Footer from '@/components/Footer'
+import BikeShowcase from '@/components/BikeShowcase'
+import RaceSystem from '@/components/RaceSystem'
+import LeaderBoard from '@/components/LeaderBoard'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900">
+    <main className="flex min-h-screen flex-col">
       <Navbar />
       <Hero />
       <Features />
+      <BikeShowcase />
+      <RaceSystem />
+      <LeaderBoard />
       <Roadmap />
       <Tokenomics />
       <Team />

@@ -17,6 +17,15 @@ export default function Navbar() {
           <Link href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300">
             Fonctionnalités
           </Link>
+          <Link href="#bikes" className="text-sm font-semibold leading-6 text-white hover:text-gray-300">
+            NFT Bikes
+          </Link>
+          <Link href="#races" className="text-sm font-semibold leading-6 text-white hover:text-gray-300">
+            Courses
+          </Link>
+          <Link href="#leaderboard" className="text-sm font-semibold leading-6 text-white hover:text-gray-300">
+            Classement
+          </Link>
           <Link href="#roadmap" className="text-sm font-semibold leading-6 text-white hover:text-gray-300">
             Roadmap
           </Link>
