@@ -1,0 +1,117 @@
+# FixieRun Robots.txt - Security and SEO Optimized
+# Last updated: 2024-11-28
+
+# Default Bot Rules
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /images/
+Allow: /static/
+Allow: /_next/static/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /account/
+Disallow: /settings/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*?*
+Disallow: /*?
+Disallow: /*/amp/
+Disallow: /amp/
+Disallow: /search
+Disallow: /404
+Disallow: /500
+Disallow: /error
+Disallow: /debug/
+
+# Security Sensitive Areas
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /.env
+Disallow: /.git
+Disallow: /.github
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /backup/
+Disallow: /temp/
+Disallow: /logs/
+Disallow: /cgi-bin/
+
+# Googlebot Specific Rules
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.woff2$
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 1
+
+# Bingbot Specific Rules
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 2
+
+# AI Bot Controls
+User-agent: GPTBot
+Disallow: /api/
+Disallow: /admin/
+Allow: /public/
+Allow: /blog/
+Allow: /about/
+Crawl-delay: 5
+
+User-agent: ChatGPT-User
+Disallow: /api/
+Disallow: /admin/
+Allow: /public/
+Crawl-delay: 5
+
+User-agent: anthropic-ai
+Disallow: /api/
+Disallow: /admin/
+Allow: /public/
+Crawl-delay: 5
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /api/
+Allow: /
+
+# Archive.org Bot
+User-agent: ia_archiver
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 3
+
+# Rate Limiting
+Crawl-delay: 10
+
+# Host Declaration
+Host: https://fixie.run
+
+# Sitemaps
+Sitemap: https://fixie.run/sitemap.xml
+Sitemap: https://fixie.run/server-sitemap.xml
+
+# Additional Security Headers (for reference)
+# X-Robots-Tag: noindex, nofollow
+# X-Frame-Options: SAMEORIGIN
+# X-Content-Type-Options: nosniff
+# Referrer-Policy: strict-origin-when-cross-origin

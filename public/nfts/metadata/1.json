@@ -1,0 +1,29 @@
+{
+  "name": "Urban Sprinter",
+  "description": "A sleek and agile fixie bike built for city streets. This legendary bike combines speed and style for the ultimate urban riding experience.",
+  "image": "/nfts/images/urban-sprinter.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 90,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Stamina",
+      "value": 85,
+      "max_value": 100
+    },
+    {
+      "trait_type": "Frame",
+      "value": "Carbon Fiber"
+    },
+    {
+      "trait_type": "Wheels",
+      "value": "Aerodynamic"
+    }
+  ]
+}
