@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from './ui/button'
+import { ConnectButton } from './ui/ConnectButton'
 
 export default function Navbar() {
   return (
@@ -29,12 +29,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <Button
-            variant="primary"
-            onClick={() => window.open('https://app.fixierun.com', '_blank')}
-          >
-            Lancer l&apos;app
-          </Button>
+          <ConnectButton />
         </div>
       </div>
     </nav>
