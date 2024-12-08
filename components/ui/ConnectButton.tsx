@@ -4,18 +4,31 @@ import { useAuth } from '@/frontend/context/auth'
 import { Button } from './button'
 
 export function ConnectButton() {
-  const { isConnected, address, connect, disconnect } = useAuth()
+  const { isConnected, address, balance, chainId, connect, disconnect } = useAuth()
 
   const formatAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`
+  }
+
+  const formatBalance = (balance: string) => {
+    const ethBalance = parseInt(balance) / 1e18
+    return `${ethBalance.toFixed(4)} ETH`
   }
 
   return (
     <Button
       variant="primary"
       onClick={isConnected ? disconnect : connect}
+      className="flex items-center gap-2"
     >
-      {isConnected ? formatAddress(address!) : 'Connecter le wallet'}
+      {isConnected ? (
+        <div className="flex items-center gap-2">
+          <span>{formatAddress(address!)}</span>
+          {balance && <span>({formatBalance(balance)})</span>}
+        </div>
+      ) : (
+        'Connecter le wallet'
+      )}
     </Button>
   )
 }
