@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { AuthProvider } from '@/frontend/context/auth'
 import '../styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'FixieRun - Web3 Fitness Gaming Platform',
-  description: 'Pédalez, Gagnez, Évoluez - Le Futur du Cyclisme Web3',
+  title: 'FixieRun',
+  description: 'Web3 Fitness Gaming Platform',
 }
 
 export default function RootLayout({
@@ -17,11 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
