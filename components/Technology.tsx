@@ -13,27 +13,35 @@ import {
 const technologies = [
   {
     name: 'Blockchain Ethereum',
-    description: 'Infrastructure sécurisée pour les NFTs et les récompenses',
+    description: 'Infrastructure sécurisée pour les NFTs et les récompenses avec smart contracts audités',
     icon: Cpu,
     color: 'text-blue-500',
+    stats: '100K+ Transactions',
+    features: ['Smart Contracts', 'NFT Minting', 'Token Management']
   },
   {
     name: 'Smart Contracts',
-    description: 'Contrats intelligents audités pour la sécurité des transactions',
+    description: 'Contrats intelligents audités garantissant la sécurité et la transparence des transactions',
     icon: FileCode2,
     color: 'text-purple-500',
+    stats: '50K+ Deployments',
+    features: ['Automated Rewards', 'Secure Trading', 'Event Management']
   },
   {
     name: 'IA Avancée',
-    description: 'Algorithmes d\'apprentissage pour personnaliser l\'expérience',
+    description: 'Algorithmes d\'apprentissage sophistiqués pour une expérience personnalisée',
     icon: Brain,
     color: 'text-green-500',
+    stats: '1M+ Predictions',
+    features: ['Route Optimization', 'Performance Analysis', 'Personalized Training']
   },
   {
     name: 'Base de Données Décentralisée',
-    description: 'Stockage sécurisé et transparent des données',
+    description: 'Stockage sécurisé et transparent des données avec haute disponibilité',
     icon: Database,
     color: 'text-pink-500',
+    stats: '10TB+ Managed',
+    features: ['Real-time Sync', 'Data Encryption', 'High Availability']
   },
 ]
 
@@ -65,8 +73,8 @@ export default function Technology() {
 
   return (
     <div className="py-24 sm:py-32 relative overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/40 to-gray-900" />
+      {/* Enhanced animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-900/40 to-gray-900 animate-gradient" />
       
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
@@ -76,12 +84,12 @@ export default function Technology() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="text-base font-semibold leading-7 text-indigo-400">Technology</h2>
+          <h2 className="text-base font-semibold leading-7 text-indigo-400">Notre Infrastructure</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Technologies Innovantes
+            Technologies de Pointe
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Notre plateforme utilise les dernières technologies pour offrir une expérience unique et sécurisée.
+            Notre plateforme s'appuie sur des technologies Web3 de pointe pour offrir une expérience de fitness gaming révolutionnaire.
           </p>
         </motion.div>
 
@@ -97,68 +105,57 @@ export default function Technology() {
                 key={tech.name}
                 variants={item}
                 whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-start"
+                className="group relative flex flex-col items-start bg-gray-900/50 rounded-2xl p-6 backdrop-blur-sm border border-gray-800 hover:border-indigo-500 transition-colors duration-300"
               >
-                <div className="rounded-lg bg-white/5 p-2 ring-1 ring-white/10">
-                  <tech.icon className={`h-6 w-6 ${tech.color}`} aria-hidden="true" />
+                <div className="mb-6">
+                  <div className={`rounded-lg p-3 ring-1 ring-gray-900/10 shadow-sm ${tech.color}`}>
+                    <tech.icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
                 </div>
-                <dt className="mt-4 font-semibold text-white">{tech.name}</dt>
-                <dd className="mt-2 leading-7 text-gray-400">{tech.description}</dd>
+                <dt className="text-lg font-semibold leading-7 text-white">
+                  {tech.name}
+                </dt>
+                <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-400">
+                  <p className="flex-auto">{tech.description}</p>
+                  <p className="mt-4 text-sm font-medium text-indigo-400">{tech.stats}</p>
+                  <ul className="mt-4 space-y-2">
+                    {tech.features.map((feature, index) => (
+                      <li key={index} className="text-sm text-gray-300 flex items-center">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
               </motion.div>
             ))}
           </dl>
         </motion.div>
 
+        {/* Stats Section */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 sm:mt-20 lg:mt-24"
         >
-          {stats.map((stat) => (
-            <motion.div
-              key={stat.id}
-              variants={item}
-              className="flex flex-col-reverse gap-y-4"
-            >
-              <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
-              <dd className="text-5xl font-semibold tracking-tight text-white">
-                {stat.value}
-              </dd>
-            </motion.div>
-          ))}
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <motion.div
+                key={stat.id}
+                whileHover={{ scale: 1.05 }}
+                className="bg-gray-900/50 rounded-lg p-6 backdrop-blur-sm border border-gray-800"
+              >
+                <dt className="text-sm font-medium leading-6 text-gray-400">{stat.name}</dt>
+                <dd className="mt-2 flex items-baseline justify-between md:block lg:flex">
+                  <div className="flex items-baseline text-2xl font-semibold text-white">
+                    {stat.value}
+                  </div>
+                </dd>
+              </motion.div>
+            ))}
+          </dl>
         </motion.div>
-
-        {/* Animated circles background */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <motion.div
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              rotate: [0, 0, 270, 270, 0],
-              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-            }}
-            transition={{
-              duration: 20,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
-            className="absolute -top-40 -right-40 h-80 w-80 border border-indigo-500/20 bg-indigo-500/10 opacity-20"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              rotate: [270, 270, 0, 0, 270],
-              borderRadius: ["50%", "50%", "20%", "20%", "50%"],
-            }}
-            transition={{
-              duration: 20,
-              ease: "easeInOut",
-              repeat: Infinity,
-              delay: 2,
-            }}
-            className="absolute -bottom-40 -left-40 h-80 w-80 border border-purple-500/20 bg-purple-500/10 opacity-20"
-          />
-        </div>
       </div>
     </div>
   )
