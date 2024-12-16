@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import BikeShowcase from '@/components/BikeShowcase'
 import RaceSystem from '@/components/RaceSystem'
 import LeaderBoard from '@/components/LeaderBoard'
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Tokenomics />
       <Team />
       <Footer />
+      <Analytics />
     </main>
   )
 }
