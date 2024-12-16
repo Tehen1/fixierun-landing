@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tower Defense Battle - Enhanced</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div id="ui">
+        <div id="resources">Gold: <span id="gold">100</span></div>
+        <div id="controls">
+            <button class="button" onclick="game.spawnUnit('soldier')">Soldier (20g)</button>
+            <button class="button" onclick="game.spawnUnit('archer')">Archer (30g)</button>
+            <button class="button" onclick="game.spawnUnit('knight')">Knight (50g)</button>
+            <button class="button" onclick="game.spawnUnit('wizard')">Wizard (80g)</button>
+        </div>
+        <div id="effects">
+            <button class="button" onclick="game.toggleWeather('rain')">Toggle Rain</button>
+            <button class="button" onclick="game.toggleWeather('snow')">Toggle Snow</button>
+            <button class="button" onclick="game.createTestExplosion()">Test Explosion</button>
+            <button class="button" onclick="game.createTestLightning()">Test Lightning</button>
+        </div>
+    </div>
+    <div id="gameCanvas"></div>
+
+    <!-- Scripts -->
+    <script src="js/optimization/PerformanceOptimizer.js"></script>
+    <script src="js/optimization/ObjectPool.js"></script>
+    <script src="js/optimization/MemoryManager.js"></script>
+    <script src="js/effects/ExplosionSystem.js"></script>
+    <script src="js/effects/LightningSystem.js"></script>
+    <script src="js/effects/WeatherSystem.js"></script>
+    <script src="js/effects/ParticleSystem.js"></script>
+    <script src="js/core/CameraSystem.js"></script>
+    <script src="js/core/Unit.js"></script>
+    <script src="js/core/Game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
