@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../fixierun-ethos"
+		},
+		{
+			"path": "../pedal-playground-main"
+		}
+	],
+	"settings": {}
+}

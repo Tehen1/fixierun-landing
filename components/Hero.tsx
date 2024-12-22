@@ -3,6 +3,7 @@
 import { Button } from './ui/button'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useEarlyAccessPopup } from '../app/hooks/useEarlyAccessPopup'
 
 const stats = [
   { id: 1, name: 'Active Riders', value: '10K+' },
@@ -53,18 +54,20 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Button
-              variant="primary"
-              size="lg"
-              className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
+            variant="primary"
+            size="lg"
+            className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
+            onClick={() => useEarlyAccessPopup.getState().open()}
             >
-              Get Early Access
+            Get Early Access
             </Button>
             <Button
-              variant="secondary"
-              size="lg"
-              className="backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300"
+            variant="secondary"
+            size="lg"
+            className="backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300"
+            onClick={() => useEarlyAccessPopup.getState().open()}
             >
-              Connect Wallet
+            Connect Wallet
             </Button>
           </motion.div>
 
