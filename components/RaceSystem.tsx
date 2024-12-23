@@ -57,7 +57,7 @@ export default function RaceSystem() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div>
-                <h3 className="text-lg font-semibold leading-8 text-white">
+                <h3 className="text-lg font-semibold leading-8 bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">
                   {race.name}
                 </h3>
                 <div className="mt-4 space-y-2">

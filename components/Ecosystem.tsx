@@ -121,7 +121,7 @@ export default function Ecosystem() {
               <div className={`inline-flex rounded-lg bg-gradient-to-r ${component.gradient} p-3`}>
                 <component.icon className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold leading-8 text-white">{component.name}</h3>
+            <h3 className="mt-4 text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text leading-8">{component.name}</h3>
               <p className="mt-2 text-base text-gray-300">{component.description}</p>
               <p className="mt-4 text-sm font-medium text-indigo-400">{component.status}</p>
             </motion.div>
@@ -159,7 +159,7 @@ export default function Ecosystem() {
               <div className={`inline-flex rounded-lg bg-gradient-to-r ${metric.gradient} p-3`}>
                 <metric.icon className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold leading-8 text-white">{metric.name}</h3>
+            <h3 className="mt-4 text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text leading-8">{metric.name}</h3>
               <p className="mt-2 text-base text-gray-300">{metric.description}</p>
               <p className="mt-4 text-sm font-medium text-indigo-400">{metric.status}</p>
             </motion.div>
