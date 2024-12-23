@@ -1,104 +1,110 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { PieChart } from 'react-minimal-pie-chart'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion';
+import { Users, Code, Lock, Wallet } from 'lucide-react';
 
-const tokenDistribution = [
-  { name: 'Fixie', percentage: 40, description: 'Primary token allocation', color: '#ff00b6' },
-  { name: 'Community', percentage: 30, description: 'For community rewards and growth', color: '#ff4d00' },
-  { name: 'Development', percentage: 20, description: 'Platform development and maintenance', color: '#ff2d73' },
-  { name: 'Marketing', percentage: 10, description: 'Marketing and partnerships', color: '#ff7349' },
-]
+const tokenomicsData = [
+  {
+    percentage: '40%',
+    title: 'Community Rewards',
+    description: 'Distributed to active riders',
+    icon: Users,
+  },
+  {
+    percentage: '20%',
+    title: 'Development',
+    description: 'Platform development & maintenance',
+    icon: Code,
+  },
+  {
+    percentage: '15%',
+    title: 'Team & Advisors',
+    description: '2-year vesting period',
+    icon: Lock,
+  },
+  {
+    percentage: '25%',
+    title: 'Treasury',
+    description: 'Ecosystem growth & partnerships',
+    icon: Wallet,
+  },
+];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
+const containerVariants = {
+  hidden: {},
+  visible: {
     transition: {
       staggerChildren: 0.2,
     },
   },
-}
+};
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-}
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+};
 
 export default function Tokenomics() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
-    <section id="tokenomics" className="relative py-16 bg-gray-900 overflow-hidden">
-      {/* New gradient background */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(circle at center, rgba(255, 0, 182, 0.1) 0%, rgba(25, 25, 25, 0) 70%)',
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto text-center">
+    <section className="py-24 relative overflow-hidden" id="tokenomics">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-          className="mx-auto max-w-2xl text-center"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-base font-semibold leading-7 text-[#ff00b6]">Tokenomics</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Distribution des Tokens
+          <h2 className="text-sm uppercase tracking-wider text-primary mb-2">
+            Tokenomics
+          </h2>
+          <h3 className="heading-2 gradient-text mb-4">
+            FIXIE Token Economy
+          </h3>
+          <p className="subtitle max-w-2xl mx-auto">
+            Discover how our token distribution creates a sustainable ecosystem
           </p>
         </motion.div>
 
-        <div className="mt-16 flex flex-col lg:flex-row items-center justify-center gap-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.8 }}
-            className="w-64 h-64"
-          >
-            <PieChart
-              data={tokenDistribution.map((item) => ({
-                title: item.name,
-                value: item.percentage,
-                color: item.color
-              }))}
-              lineWidth={40}
-              paddingAngle={4}
-              rounded
-              animate
-            />
-            <p className="text-lg text-gray-300 mt-6 max-w-xl">
-              Les utilisateurs peuvent participer à la gouvernance de la plateforme en détenant des jetons $Fixie et influencer ainsi l&apos;évolution de l&apos;écosystème FixieRun.
-            </p>
-          </motion.div>
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate={isInView ? "show" : "hidden"}
-            className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-4 lg:grid-cols-4"
-          >
-            {tokenDistribution.map((token) => (
-              <motion.div
-                key={token.name}
-                variants={item}
-                className="relative overflow-hidden rounded-2xl bg-black/20 backdrop-blur-sm p-6 shadow-lg"
-              >
-                <h3 className="text-lg font-semibold text-[#ff00b6]">{token.name}</h3>
-                <p className="mt-2 text-5xl font-bold text-[#ff00b6]">{token.percentage}%</p>
-                <p className="mt-2 text-sm text-gray-400">{token.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {tokenomicsData.map((item) => (
+            <motion.div
+              key={item.title}
+              variants={itemVariants}
+              className="token-card group"
+            >
+              <div className="token-card-icon">
+                <item.icon className="w-full h-full" />
+              </div>
+              <div className="token-card-percentage">{item.percentage}</div>
+              <h4 className="token-card-title">{item.title}</h4>
+              <p className="token-card-description">{item.description}</p>
+              
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -8,6 +8,15 @@
 		},
 		{
 			"path": "../pedal-playground-main"
+		},
+		{
+			"path": "../CascadeProjects/fixie-run"
+		},
+		{
+			"path": "../CascadeProjects/FixieRun"
+		},
+		{
+			"path": "../CascadeProjects/FixieRun-next"
 		}
 	],
 	"settings": {
