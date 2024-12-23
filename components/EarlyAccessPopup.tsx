@@ -1,7 +1,7 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
@@ -47,7 +47,23 @@ export function EarlyAccessPopup({ isOpen, onOpenChangeAction }: EarlyAccessPopu
                                     <X className="h-5 w-5 text-gray-500" />
                                 </Dialog.Close>
                             </div>
-                            {/* Rest of the component remains the same */}
+                            <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required
+                                />
+                                <button
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="w-full rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                >
+                                    {isLoading ? 'Submitting...' : 'Get Early Access'}
+                                </button>
+                            </form>
                         </Dialog.Content>
                     </Dialog.Portal>
                 )}
