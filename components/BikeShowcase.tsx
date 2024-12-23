@@ -1,8 +1,9 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
+
 import { useEarlyAccess } from '@/contexts/EarlyAccessContext'
 
 const container = {
@@ -24,6 +25,11 @@ const BikeShowcase = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const { openPopup } = useEarlyAccess()
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const nftBikes = [
     {
@@ -95,6 +101,10 @@ const BikeShowcase = () => {
       bgColor: 'from-red-500 to-orange-500',
     }
   ]
+
+  if (!isClient) {
+    return null
+  }
 
   return (
     <div ref={ref} className="py-24 sm:py-32">
