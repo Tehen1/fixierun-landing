@@ -4,6 +4,9 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": ["warn", {
@@ -12,14 +15,14 @@
     "@typescript-eslint/no-explicit-any": "warn",
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "simple-import-sort/imports": "error",
-    "simple-import-sort/alphabetize": {
+    "simple-import-sort/alphabetize": ["error", {
       "order": "asc",
       "groups": [
         "^react",
         "^@?[^/]+",
         "^[./]"
       ]
-    },
+    }],
     "unused-imports/no-unused-imports": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-unnecessary-condition": "warn",
