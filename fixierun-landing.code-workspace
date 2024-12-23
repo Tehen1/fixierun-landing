@@ -10,5 +10,7 @@
 			"path": "../pedal-playground-main"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.trimTrailingWhitespace": true
+	}
 }
