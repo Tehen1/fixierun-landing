@@ -98,7 +98,7 @@ export default function AppModules() {
                   <module.icon className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 
-                <h3 className="mt-4 text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text leading-8">
+                <h3 className="mt-4 text-lg font-semibold text-[#ff00b6] leading-8">
                 {module.name}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-gray-300">

@@ -140,7 +140,7 @@ export default function BikeShowcase() {
               </motion.div>
               <div className="mt-8">
                 <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text leading-8">
+                <h3 className="text-lg font-semibold text-[#ff00b6] leading-8">
                     {bike.name}
                 </h3>
                   <p className="text-sm text-indigo-400">{bike.type}</p>

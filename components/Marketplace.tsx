@@ -105,7 +105,7 @@ return (
             </div>
             <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{bike.name}</h3>
+                <h3 className="text-xl font-bold text-[#ff00b6]">{bike.name}</h3>
                 <span className="px-3 py-1 bg-indigo-600 text-white text-sm rounded-full">
                     {bike.rarity}
                 </span>

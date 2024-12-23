@@ -121,7 +121,7 @@ export default function Features() {
                     <feature.icon className="h-6 w-6 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300" aria-hidden="true" />
                   </div>
                 </dt>
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{feature.name}</h3>
+                <h3 className="text-xl font-semibold text-[#ff00b6]">{feature.name}</h3>
                 <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-400">
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-4 text-sm font-medium text-indigo-400">{feature.stats}</p>

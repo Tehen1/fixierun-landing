@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BiTrophy, BiCalendarEvent, BiNews, BiMessageRoundedDetail } from 'react-icons/bi'
+import { BiTrophy, BiNews, BiMessageRoundedDetail } from 'react-icons/bi'
 
 const events = [
 {
@@ -110,7 +110,6 @@ return (
             className="bg-gray-800/50 rounded-xl p-6"
         >
             <div className="flex items-center mb-6">
-            <BiCalendarEvent className="text-indigo-500 text-2xl mr-2" />
             <h3 className="text-2xl font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Événements</h3>
             </div>
             <div className="space-y-4">
@@ -134,7 +133,7 @@ return (
         >
             <div className="flex items-center mb-6">
             <BiTrophy className="text-yellow-500 text-2xl mr-2" />
-            <h3 className="text-2xl font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Top Players</h3>
+            <h3 className="text-2xl font-semibold text-[#ff00b6]">Top Players</h3>
             </div>
             <div className="space-y-4">
             {topPlayers.map((player, index) => (
@@ -164,7 +163,7 @@ return (
         >
             <div className="flex items-center mb-6">
             <BiNews className="text-green-500 text-2xl mr-2" />
-            <h3 className="text-2xl font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Actualités</h3>
+            <h3 className="text-2xl font-semibold text-[#ff00b6]">Actualités</h3>
             </div>
             <div className="space-y-4">
             {news.map((item, index) => (
@@ -186,7 +185,7 @@ return (
         >
             <div className="flex items-center mb-6">
             <BiMessageRoundedDetail className="text-purple-500 text-2xl mr-2" />
-            <h3 className="text-2xl font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Forum</h3>
+            <h3 className="text-2xl font-semibold text-[#ff00b6]">Forum</h3>
             </div>
             <div className="space-y-4">
             {discussions.map((discussion, index) => (

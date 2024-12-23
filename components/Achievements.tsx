@@ -47,7 +47,7 @@ export default function Achievements() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text mb-4">Achievements</h2>
+                    <h2 className="text-lg font-semibold text-[#ff00b6] mb-4">Achievements</h2>
                     <p className="text-gray-400">Track your progress and earn rewards</p>
                 </motion.div>
 
@@ -62,12 +62,12 @@ export default function Achievements() {
                         >
                             <div className="flex items-center space-x-4 mb-4">
                                 <achievement.icon className="text-2xl text-indigo-500" />
-                                <h4 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.title}</h4>
+                                <span className="text-lg font-semibold text-[#ff00b6]">Progress</span>
                             </div>
                             <p className="text-gray-400 mb-4">{achievement.description}</p>
                             <div className="mb-4">
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Progress</span>
+                                    <span className="text-lg font-semibold text-[#ff00b6]">{achievement.progress}%</span>
                                     <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.progress}%</span>
                                 </div>
                                 <div className="w-full bg-gray-700 rounded-full h-2">
@@ -78,8 +78,8 @@ export default function Achievements() {
                                 </div>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Reward:</span>
-                                <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.reward}</span>
+                                <span className="text-lg font-semibold text-[#ff00b6]">Reward:</span>
+                                <span className="text-lg font-semibold text-[#ff00b6]">{achievement.reward}</span>
                             </div>
                         </motion.div>
                     ))}
@@ -91,14 +91,14 @@ export default function Achievements() {
                         {levels.map((level) => (
                             <div key={level.level} className="relative">
                                 <div className="flex justify-between items-center mb-2">
-                                    <h4 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Level {level.level}</h4>
-                                    <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{level.xp} XP</span>
+                                    <h4 className="text-lg font-semibold text-[#ff00b6]">Level {level.level}</h4>
+                                    <span className="text-lg font-semibold text-[#ff00b6]">{level.xp} XP</span>
                                 </div>
                                 <div className="space-y-2">
                                     {level.rewards.map((reward, index) => (
                                         <div key={index} className="flex items-center">
                                             <FiAward className="mr-2 text-indigo-500" />
-                                            <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{reward}</span>
+                                            <span className="text-lg font-semibold text-[#ff00b6]">{reward}</span>
                                         </div>
                                     ))}
                                 </div>

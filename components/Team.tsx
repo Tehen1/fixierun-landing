@@ -52,7 +52,7 @@ export default function Team() {
                   <div className="h-full w-full bg-gradient-to-tr from-blue-600 to-purple-600" />
                 </div>
                 <div>
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text leading-8">
+                <h3 className="text-lg font-semibold text-[#ff00b6] leading-8">
                     {member.name}
                 </h3>
                   <p className="text-sm text-blue-600">{member.role}</p>

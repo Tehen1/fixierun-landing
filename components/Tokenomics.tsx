@@ -91,7 +91,7 @@ export default function Tokenomics() {
                 variants={item}
                 className="relative overflow-hidden rounded-2xl bg-black/20 backdrop-blur-sm p-6 shadow-lg"
               >
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-[#ff00b6] to-[#ff4d00] text-transparent bg-clip-text">{token.name}</h3>
+                <h3 className="text-lg font-semibold text-[#ff00b6]">{token.name}</h3>
                 <p className="mt-2 text-5xl font-bold text-[#ff00b6]">{token.percentage}%</p>
                 <p className="mt-2 text-sm text-gray-400">{token.description}</p>
               </motion.div>
