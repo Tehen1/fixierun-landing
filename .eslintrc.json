@@ -9,20 +9,11 @@
   },
   "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": ["warn", {
-      "allowExpressions": true
-    }],
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "warn",
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "simple-import-sort/imports": "error",
-    "simple-import-sort/alphabetize": ["error", {
-      "order": "asc",
-      "groups": [
-        "^react",
-        "^@?[^/]+",
-        "^[./]"
-      ]
-    }],
+    "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-unnecessary-condition": "warn",
