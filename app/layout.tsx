@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { AuthProvider } from '@/frontend/context/auth'
-import { EarlyAccessProvider } from '@/components/EarlyAccessContext'
+import { EarlyAccessProvider } from '@/contexts/EarlyAccessContext'
 import { Toaster } from 'react-hot-toast'
 import { Analytics } from "@vercel/analytics/react"
 import '../styles/globals.css'

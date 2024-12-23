@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { useEarlyAccess } from '@/components/EarlyAccessContext'
+import { useEarlyAccess } from '@/contexts/EarlyAccessContext'
 
 const nftBikes = [
   {

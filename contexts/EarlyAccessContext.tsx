@@ -10,7 +10,7 @@ type EarlyAccessContextType = {
   closePopup: () => void
 }
 
-const EarlyAccessContext = createContext<EarlyAccessContextType | undefined>(undefined)
+export const EarlyAccessContext = createContext<EarlyAccessContextType | undefined>(undefined)
 
 export const EarlyAccessProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -23,7 +23,7 @@ export const EarlyAccessProvider: React.FC<{ children: ReactNode }> = ({ childre
       {children}
       <EarlyAccessPopup 
         isOpen={isPopupOpen} 
-        onOpenChange={closePopup} 
+        onOpenChangeAction={closePopup}
       />
     </EarlyAccessContext.Provider>
   )

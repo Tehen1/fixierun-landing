@@ -4,11 +4,26 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
   "rules": {
     "@typescript-eslint/no-unused-expressions": ["error", {
       "allowShortCircuit": true,
       "allowTernary": true
-    }]
+    }],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": ["warn", {
+      "allowExpressions": true
+    }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "unused-imports/no-unused-imports": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unnecessary-condition": "warn",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "no-duplicate-imports": "error"
   }
 }
