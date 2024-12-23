@@ -3,7 +3,7 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import toast from 'react-hot-toast'
 
 interface EarlyAccessPopupProps {
@@ -12,8 +12,13 @@ interface EarlyAccessPopupProps {
 }
 
 export function EarlyAccessPopup({ isOpen, onOpenChangeAction }: EarlyAccessPopupProps): React.ReactElement {
+    const [isClient, setIsClient] = useState(false)
     const [email, setEmail] = useState<string>('')
     const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
 
     const handleSubmit = async (e: React.FormEvent): Promise<void> => {
         e.preventDefault()
@@ -30,6 +35,10 @@ export function EarlyAccessPopup({ isOpen, onOpenChangeAction }: EarlyAccessPopu
         } finally {
             setIsLoading(false)
         }
+    }
+
+    if (!isClient) {
+        return <></>
     }
 
     return (
