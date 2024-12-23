@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended"
@@ -15,9 +16,10 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "warn",
+    "no-duplicate-imports": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-unnecessary-condition": "warn",
-    "@typescript-eslint/prefer-optional-chain": "error",
-    "no-duplicate-imports": "error"
+    "@typescript-eslint/prefer-optional-chain": "error"
   }
 }
