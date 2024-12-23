@@ -18,7 +18,7 @@ const nftBikes = [
       rarity: 70,
     },
     features: ['Unique Design', 'Special Abilities', 'Rare Traits'],
-    image: '/images/bikes/rare-bike.png',
+    image: '/bikes/nft/fixierun-nft.png',
     bgColor: 'from-blue-500 to-purple-500',
   },
   {
@@ -34,7 +34,7 @@ const nftBikes = [
       rarity: 85,
     },
     features: ['Enhanced Stats', 'Exclusive Skins', 'Bonus Rewards'],
-    image: '/images/bikes/epic-bike.png',
+    image: '/bikes/nft/fixierun-nft(1).png',
     bgColor: 'from-purple-500 to-pink-500',
   },
   {
@@ -49,27 +49,29 @@ const nftBikes = [
       durability: 94,
       rarity: 95,
     },
-    features: ['Maximum Performance', 'Unique Effects', 'Special Access'],
-    image: '/images/bikes/legendary-bike.png',
-    bgColor: 'from-yellow-500 to-red-500',
+    features: ['Ultimate Performance', 'Collector\'s Pride', 'Unmatched Abilities'],
+    image: '/bikes/nft/fixierun-nft(2).png',
+    bgColor: 'from-pink-500 to-red-500',
   },
   {
     id: 4,
     name: 'Mythic NFT',
     type: 'Mythic',
-    description: 'Ancient legendary bikes with mystical powers',
+    description: 'Extraordinary bikes beyond legendary status',
     stats: {
-      speed: 100,
-      acceleration: 98,
+      speed: 98,
+      acceleration: 96,
       handling: 95,
       durability: 97,
-      rarity: 100,
+      rarity: 99,
     },
-    features: ['Mythical Powers', 'Time-Limited Edition', 'Exclusive Quests'],
-    image: '/images/bikes/mythic-bike.png',
-    bgColor: 'from-emerald-500 to-cyan-500',
+    features: ['Supreme Performance', 'Absolute Rarity', 'Transcendent Design'],
+    image: '/bikes/nft/fixierun-nft(3).png',
+    bgColor: 'from-red-500 to-orange-500',
+
   },
-]
+];
+
 
 const container = {
   hidden: { opacity: 0 },
