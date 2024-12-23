@@ -79,7 +79,6 @@ export default function BikeShowcase() {
             >
               {/* ... (previous code remains the same) */}
               <div className="mt-8">
-                {/* ... (previous code remains the same) */}
                 <motion.button
                   onClick={openPopup}
                   whileHover={{ scale: 1.05 }}
