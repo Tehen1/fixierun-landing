@@ -67,7 +67,7 @@ return (
                 onClick={() => setCurrentStep(step.id)}
             >
                 <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{step.title}</h3>
                 {completedSteps.includes(step.id) && (
                     <FiCheck className="text-green-400 text-xl" />
                 )}
@@ -83,9 +83,7 @@ return (
             </div>
             
             <div className="space-y-4">
-            <h4 className="text-xl font-bold text-white">
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{tutorialSteps[currentStep - 1].title}</h3>
-            </h4>
+            <h3 className="text-xl font-bold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{tutorialSteps[currentStep - 1].title}</h3>
             <div className="space-y-2">
                 {tutorialSteps[currentStep - 1].tips.map((tip, index) => (
                 <div
