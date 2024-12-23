@@ -4,7 +4,7 @@ import { useAuth } from '@/frontend/context/auth'
 import { Button } from './button'
 
 export function ConnectButton() {
-  const { isConnected, address, balance, chainId, connect, disconnect } = useAuth()
+const { isConnected, address, balance, connect, disconnect } = useAuth()
 
   const formatAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`

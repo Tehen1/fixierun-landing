@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -127,10 +128,13 @@ export default function BikeShowcase() {
                 whileHover={{ scale: 1.05 }}
                 className={`relative h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-r ${bike.bgColor} p-6`}
               >
-                <img
-                  src={bike.image}
-                  alt={bike.name}
-                  className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
+                <Image
+                src={bike.image}
+                alt={bike.name}
+                width={400}
+                height={320}
+                className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
+                priority={bike.id === 1}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSearch, FiFilter } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 import Image from 'next/image';
 
 const bikes = [
@@ -34,7 +34,7 @@ const bikes = [
 export default function Marketplace() {
 const [searchTerm, setSearchTerm] = useState('');
 const [selectedRarity, setSelectedRarity] = useState('All');
-const [priceRange, setPriceRange] = useState([0, 2]);
+const [priceRange] = useState([0, 2]);
 
 const filteredBikes = bikes.filter(bike => {
     const matchesSearch = bike.name.toLowerCase().includes(searchTerm.toLowerCase());

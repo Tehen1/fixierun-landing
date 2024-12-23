@@ -101,9 +101,9 @@ export default function Ecosystem() {
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Complete Ecosystem
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Discover FixieRun's interconnected components
-          </p>
+        <p className="mt-6 text-lg leading-8 text-gray-300">
+        Discover FixieRun&apos;s interconnected components
+        </p>
         </motion.div>
 
         <motion.div

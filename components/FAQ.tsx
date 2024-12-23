@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'Qu\'est-ce que FixieRun ?',
+    question: 'Qu&apos;est-ce que FixieRun ?',
     answer: 'FixieRun est une plateforme innovante qui combine le fitness, le gaming et la technologie Web3. Elle vous permet de gagner des récompenses en faisant du vélo, de collectionner des NFT uniques et de participer à des courses mondiales tout en restant en forme.',
   },
   {
@@ -30,8 +30,8 @@ export default function FAQ() {
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl divide-y divide-white/10">
-          <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">Questions Fréquentes</h2>
-          <dl className="mt-10 space-y-6 divide-y divide-white/10">
+        <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">Questions Fréquentes</h2>
+        <dl className="mt-10 space-y-6 divide-y divide-white/10">
             {faqs.map((faq, index) => (
               <div
                 key={index}
@@ -77,9 +77,9 @@ export default function FAQ() {
         <div className="mt-16 rounded-2xl bg-gray-900/50 p-8 backdrop-blur ring-1 ring-white/10">
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-400">FixieRun Assistant</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-white">Besoin d'aide ?</p>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-white">Besoin d&apos;aide ?</p>
             <p className="mt-4 text-lg text-gray-300">
-              Notre assistant virtuel est disponible 24/7 pour répondre à toutes vos questions sur FixieRun, les NFTs et le système de récompenses.
+            Notre assistant virtuel est disponible 24/7 pour répondre à toutes vos questions sur FixieRun, les NFTs et le système de récompenses.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

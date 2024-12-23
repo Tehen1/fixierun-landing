@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { UserCircle2 } from 'lucide-react'
@@ -86,10 +87,13 @@ export default function Testimonials() {
               <figcaption className="mt-6 flex items-center gap-x-4">
                 <div className="relative h-10 w-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500">
                   {testimonial.image ? (
-                    <img
-                      className="h-full w-full rounded-full object-cover"
-                      src={testimonial.image}
-                      alt={testimonial.author}
+                    <Image
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    width={40}
+                    height={40}
+                    className="h-full w-full rounded-full object-cover"
+                    priority
                     />
                   ) : (
                     <UserCircle2 className="h-full w-full p-1 text-white" />

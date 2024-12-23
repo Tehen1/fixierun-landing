@@ -47,7 +47,7 @@ export default function Achievements() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-4xl font-bold text-white mb-4">Achievements</h2>
+                    <h2 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text mb-4">Achievements</h2>
                     <p className="text-gray-400">Track your progress and earn rewards</p>
                 </motion.div>
 
@@ -62,13 +62,13 @@ export default function Achievements() {
                         >
                             <div className="flex items-center space-x-4 mb-4">
                                 <achievement.icon className="text-2xl text-indigo-500" />
-                                <h3 className="text-xl font-bold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.title}</h3>
+                                <h4 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.title}</h4>
                             </div>
                             <p className="text-gray-400 mb-4">{achievement.description}</p>
                             <div className="mb-4">
-                                <div className="flex justify-between text-sm text-gray-400 mb-1">
-                                    <span>Progress</span>
-                                    <span>{achievement.progress}%</span>
+                                <div className="flex justify-between text-sm mb-1">
+                                    <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Progress</span>
+                                    <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.progress}%</span>
                                 </div>
                                 <div className="w-full bg-gray-700 rounded-full h-2">
                                     <div
@@ -78,27 +78,27 @@ export default function Achievements() {
                                 </div>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="text-sm text-gray-400">Reward:</span>
-                                <span className="text-indigo-400 font-semibold">{achievement.reward}</span>
+                                <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Reward:</span>
+                                <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{achievement.reward}</span>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
                 <div className="bg-gray-800 rounded-xl p-8">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text mb-6">Level Progression</h3>
+                    <h3 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text mb-6">Level Progression</h3>
                     <div className="space-y-6">
                         {levels.map((level) => (
                             <div key={level.level} className="relative">
                                 <div className="flex justify-between items-center mb-2">
-                                    <span className="text-lg font-semibold text-white">Level {level.level}</span>
-                                    <span className="text-indigo-400">{level.xp} XP</span>
+                                    <h4 className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">Level {level.level}</h4>
+                                    <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{level.xp} XP</span>
                                 </div>
                                 <div className="space-y-2">
                                     {level.rewards.map((reward, index) => (
-                                        <div key={index} className="flex items-center text-gray-400">
+                                        <div key={index} className="flex items-center">
                                             <FiAward className="mr-2 text-indigo-500" />
-                                            <span>{reward}</span>
+                                            <span className="text-lg font-semibold bg-gradient-to-r from-accent-pink via-primary to-accent-cyan text-transparent bg-clip-text">{reward}</span>
                                         </div>
                                     ))}
                                 </div>

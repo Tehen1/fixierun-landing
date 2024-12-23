@@ -66,7 +66,7 @@ return (
                         animate
                     />
                     <p className="text-lg text-gray-300 mt-6 max-w-xl">
-                        Les utilisateurs peuvent participer à la gouvernance de la plateforme en détenant des jetons $Fixie et influencer ainsi l'évolution de l'écosystème FixieRun.
+                    Les utilisateurs peuvent participer à la gouvernance de la plateforme en détenant des jetons $Fixie et influencer ainsi l&apos;évolution de l&apos;écosystème FixieRun.
                     </p>
                 </motion.div>
                 <motion.div

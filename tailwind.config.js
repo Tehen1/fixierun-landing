@@ -10,9 +10,11 @@ module.exports = {
   theme: {
     extend: {
     colors: {
-        'custom-purple': '#4c1f99',
-        'custom-purple-light': '#6b24b1',
-        'accent-pink': '#FF1493',
+    'custom-purple': '#6b24b1',
+    'custom-purple-light': '#8c3fe3',
+    'custom-purple-dark': '#4c1f99',
+    'custom-purple-hover': '#7728c7',
+    'accent-pink': '#FF1493',
         'accent-cyan': '#00FFFF',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

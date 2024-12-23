@@ -25,7 +25,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     toast.success('Thanks! We\'ll keep you updated about early access.')
     setEmail('')
     onOpenChange(false)
-    } catch (error) {
+    } catch {
     toast.error('Something went wrong. Please try again.')
     } finally {
     setIsLoading(false)
