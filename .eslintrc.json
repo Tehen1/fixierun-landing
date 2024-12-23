@@ -9,10 +9,18 @@
     "@typescript-eslint/explicit-function-return-type": ["warn", {
       "allowExpressions": true
     }],
+    "@typescript-eslint/no-explicit-any": "warn",
     "no-console": ["warn", { "allow": ["warn", "error"] }],
-    "unused-imports/no-unused-imports": "error",
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    "simple-import-sort/alphabetize": {
+      "order": "asc",
+      "groups": [
+        "^react",
+        "^@?[^/]+",
+        "^[./]"
+      ]
+    },
+    "unused-imports/no-unused-imports": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-unnecessary-condition": "warn",
     "@typescript-eslint/prefer-optional-chain": "error",
