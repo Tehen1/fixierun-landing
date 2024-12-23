@@ -20,7 +20,7 @@ const item = {
   show: { opacity: 1, y: 0 }
 };
 
-export function BikeShowcase() {
+const BikeShowcase = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const { openPopup } = useEarlyAccess()
@@ -95,6 +95,7 @@ export function BikeShowcase() {
       bgColor: 'from-red-500 to-orange-500',
     }
   ]
+
   return (
     <div ref={ref} className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -179,3 +180,5 @@ export function BikeShowcase() {
     </div>
   )
 }
+
+export default BikeShowcase
