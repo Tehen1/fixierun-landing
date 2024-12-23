@@ -54,22 +54,6 @@ const nftBikes = [
     image: '/bikes/nft/fixierun-legendary.png',
     bgColor: 'from-pink-500 to-red-500',
   },
-  {
-    id: 4,
-    name: 'Mythic NFT',
-    type: 'Mythic',
-    description: 'Unimaginably rare bikes with game-changing abilities',
-    stats: {
-      speed: 100,
-      acceleration: 95,
-      handling: 90,
-      durability: 100,
-      rarity: 100,
-    },
-    features: ['Unprecedented Abilities', 'Absolute Rarity', 'Game-Changing Design'],
-    image: '/bikes/nft/fixierun-mythic.png',
-    bgColor: 'from-red-500 to-orange-500',
-  }
 ];
 
 const container = {
