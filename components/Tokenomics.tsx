@@ -6,10 +6,10 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const tokenDistribution = [
-  { name: 'Distribution', percentage: 40, description: 'Équitable distribution entre utilisateurs et développeurs' },
-  { name: 'Mécanisme', percentage: 30, description: 'Staking et récompenses pour participation active' },
-  { name: 'Gouvernance', percentage: 20, description: 'Système de vote décentralisé pour décisions importantes' },
-  { name: 'Sécurité', percentage: 10, description: 'Mécanismes de verrouillage et de vesting pour la stabilité' },
+{ name: 'Fixie', percentage: 40, description: 'Primary token allocation', color: '#3498db' },
+{ name: 'Community', percentage: 30, description: 'For community rewards and growth', color: '#e67e22' },
+{ name: 'Development', percentage: 20, description: 'Platform development and maintenance', color: '#2980b9' },
+{ name: 'Marketing', percentage: 10, description: 'Marketing and partnerships', color: '#1abc9c' },
 ]
 
 const container = {
@@ -32,8 +32,8 @@ const ref = useRef(null)
 const isInView = useInView(ref, { once: true, margin: "-100px" })
 
 return (
-    <div className="py-24 sm:py-32">
-    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="tokenomics" className="py-16 bg-gray-900">
+    <div className="container mx-auto text-center">
         <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
@@ -58,16 +58,16 @@ return (
             data={tokenDistribution.map((item) => ({
                 title: item.name,
                 value: item.percentage,
-                color: item.name === 'Distribution' ? '#818cf8' :
-                item.name === 'Mécanisme' ? '#6366f1' :
-                item.name === 'Gouvernance' ? '#4f46e5' :
-                '#4338ca'
+                color: item.color
             }))}
             lineWidth={40}
-            paddingAngle={2}
+            paddingAngle={4}
             rounded
             animate
             />
+            <p className="text-lg text-gray-300 mt-6 max-w-xl">
+            Les utilisateurs peuvent participer à la gouvernance de la plateforme en détenant des jetons $Fixie et influencer ainsi l'évolution de l'écosystème FixieRun.
+            </p>
         </motion.div>
         <motion.div
             variants={container}

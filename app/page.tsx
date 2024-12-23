@@ -20,12 +20,12 @@ export default function Home() {
     <Navbar />
     <Hero />
     <Features />
+    <CommunityHub />
     <Tutorial />
     <BikeShowcase />
     <Marketplace />
     <RaceSystem />
     <Achievements />
-    <CommunityHub />
     <LeaderBoard />
     <Tokenomics />
     <Roadmap />
