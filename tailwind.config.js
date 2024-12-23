@@ -9,7 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
+    colors: {
+        'custom-purple': '#4c1f99',
+        'custom-purple-light': '#6b24b1',
+        'accent-pink': '#FF1493',
+        'accent-cyan': '#00FFFF',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
