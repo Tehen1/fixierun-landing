@@ -10,12 +10,12 @@ module.exports = {
   theme: {
     extend: {
     colors: {
-    'custom-purple': '#6b24b1',
-    'custom-purple-light': '#8c3fe3',
-    'custom-purple-dark': '#4c1f99',
-    'custom-purple-hover': '#7728c7',
-    'accent-pink': '#FF1493',
-        'accent-cyan': '#00FFFF',
+    'custom-purple': '#ff00b6',          // Main pink from Pedal
+    'custom-purple-light': '#ff2d73',    // Lighter pink
+    'custom-purple-dark': '#cc008f',     // Darker pink
+    'custom-purple-hover': '#ff1a85',    // Hover state
+    'accent-pink': '#ff4d00',            // Orange accent
+        'accent-cyan': '#ff7349',            // Light orange accent
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -59,3 +59,4 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
+EOT
