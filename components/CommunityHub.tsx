@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BiTrophy, BiNews, BiMessageRoundedDetail } from 'react-icons/bi'
+import { BiMessageRoundedDetail,BiNews, BiTrophy } from 'react-icons/bi'
 
 const events = [
 {

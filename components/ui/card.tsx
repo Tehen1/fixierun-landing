@@ -1,30 +1,25 @@
+import { type HTMLMotionProps,motion } from 'framer-motion';
 import * as React from 'react';
-import { motion, type MotionProps } from 'framer-motion';
+
 import { cn } from '@/lib/utils';
 
 const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { animate?: boolean }
->(({ className, animate = true, ...props }, ref) => {
-  const Comp = animate ? motion.div : 'div';
-  const motionProps: MotionProps = animate
-    ? {
-        whileHover: { y: -5, transition: { duration: 0.2 } },
-        initial: { opacity: 0, y: 20 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true },
-      }
-    : {};
-
-  return (
-    <Comp
-      ref={ref}
-      className={cn(
+HTMLDivElement,
+HTMLMotionProps<'div'>
+>(({ className, ...props }, ref) => {
+return (
+    <motion.div
+    ref={ref}
+    className={cn(
         'rounded-xl border bg-card text-card-foreground shadow-sm transition-colors hover:bg-card/90',
         className
-      )}
-      {...motionProps}
-      {...props}
+    )}
+    whileHover={{ y: -5 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.2 }}
+    {...props}
     />
   );
 });
@@ -91,9 +86,9 @@ CardFooter.displayName = 'CardFooter';
 
 export {
   Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
   CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 };

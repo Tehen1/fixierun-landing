@@ -1,7 +1,8 @@
-import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { motion } from 'framer-motion';
+import { type HTMLMotionProps,motion } from 'framer-motion';
 import * as React from 'react';
+
+import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
@@ -28,34 +29,24 @@ const buttonVariants = cva(
   }
 );
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  animate?: boolean;
+export interface ButtonProps extends 
+Omit<HTMLMotionProps<"button">, keyof VariantProps<typeof buttonVariants>>,
+VariantProps<typeof buttonVariants> {
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, animate = true, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? motion.button : 'button';
-
-    const motionProps = animate
-      ? {
-          whileHover: { scale: 1.02 },
-          whileTap: { scale: 0.98 },
-          transition: { duration: 0.2 },
-        }
-      : {};
-
+({ className, variant, size, ...props }, ref) => {
     return (
-      <Comp
+    <motion.button
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        {...motionProps}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.2 }}
         {...props}
-      />
+    />
     );
-  }
+}
 );
 
 Button.displayName = 'Button';

@@ -3,7 +3,7 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useEffect,useState } from 'react'
 import toast from 'react-hot-toast'
 
 interface EarlyAccessPopupProps {

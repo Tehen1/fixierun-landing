@@ -1,18 +1,20 @@
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import Features from '../components/Features'
-import Tutorial from '../components/Tutorial'
-import BikeShowcase from '../components/BikeShowcase'
-import Marketplace from '../components/Marketplace'
-import RaceSystem from '../components/RaceSystem'
+import { Analytics } from "@vercel/analytics/react"
+
 import Achievements from '../components/Achievements'
+import BikeShowcase from '../components/BikeShowcase'
 import CommunityHub from '../components/CommunityHub'
+import Features from '../components/Features'
+import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 import LeaderBoard from '../components/LeaderBoard'
-import Tokenomics from '../components/Tokenomics'
+import Marketplace from '../components/Marketplace'
+import Navbar from '../components/Navbar'
+import NftCollection from '../components/NftCollection'
+import RaceSystem from '../components/RaceSystem'
 import Roadmap from '../components/Roadmap'
 import Team from '../components/Team'
-import Footer from '../components/Footer'
-import { Analytics } from "@vercel/analytics/react"
+import Tokenomics from '../components/Tokenomics'
+import Tutorial from '../components/Tutorial'
 
 export default function Home() {
   return (
@@ -23,6 +25,7 @@ export default function Home() {
     <CommunityHub />
     <Tutorial />
     <BikeShowcase />
+    <NftCollection />
     <Marketplace />
     <RaceSystem />
     <Achievements />

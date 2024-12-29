@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Code, Lock, Wallet } from 'lucide-react';
+import { Code, Lock, Users, Wallet } from 'lucide-react';
 
 const tokenomicsData = [
   {

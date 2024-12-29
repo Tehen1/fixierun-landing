@@ -1,14 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import {
-  Timer,
-  Trophy,
   Map,
   Medal,
+  Timer,
+  Trophy,
 } from 'lucide-react'
+import { useRef } from 'react'
 
 const modules = [
   {

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+
 import { useEarlyAccessPopup } from '../app/hooks/useEarlyAccessPopup'
 
 const races = [

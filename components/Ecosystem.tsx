@@ -1,17 +1,15 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { 
-  Server, 
-  Globe2,
   Bike,
+  Globe2,
   Heart,
   Leaf,
-  Users,
-  Shield
-} from 'lucide-react'
+  Server, 
+  Shield,
+  Users} from 'lucide-react'
+import { useRef } from 'react'
 
 const ecosystemComponents = [
   {

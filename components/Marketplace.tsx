@@ -1,8 +1,8 @@
 'use client';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSearch } from 'react-icons/fi';
 import Image from 'next/image';
+import { useState } from 'react';
+import { FiSearch } from 'react-icons/fi';
 
 const bikes = [
 {

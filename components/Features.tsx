@@ -1,14 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { 
   Bike, 
   Coins, 
   Users, 
   Wallet,
 } from 'lucide-react'
+import { useRef } from 'react'
 
 const features = [
   {

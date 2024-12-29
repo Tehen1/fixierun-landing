@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useEffect,useState } from 'react'
 
 declare global {
   interface Window {
@@ -29,97 +29,101 @@ const AuthContext = createContext<AuthContextType>({
 })
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [address, setAddress] = useState<string | null>(null)
-  const [chainId, setChainId] = useState<string | null>(null)
-  const [balance, setBalance] = useState<string | null>(null)
-  const [isConnecting, setIsConnecting] = useState(false)
-  const [isConnected, setIsConnected] = useState(false)
+const [address, setAddress] = useState<string | null>(null)
+const [chainId, setChainId] = useState<string | null>(null)
+const [balance, setBalance] = useState<string | null>(null)
+const [isConnecting, setIsConnecting] = useState(false)
+const [isConnected, setIsConnected] = useState(false)
 
-  const connect = async () => {
+const connect = async () => {
+    setIsConnecting(true)
     try {
-      if (typeof window.ethereum !== 'undefined') {
+    if (typeof window.ethereum !== 'undefined') {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
         const chainId = await window.ethereum.request({ method: 'eth_chainId' })
         const balance = await window.ethereum.request({
-          method: 'eth_getBalance',
-          params: [accounts[0], 'latest']
+        method: 'eth_getBalance',
+        params: [accounts[0], 'latest']
         })
 
         setAddress(accounts[0])
         setChainId(chainId)
         setBalance(balance)
         setIsConnected(true)
-      } else {
-        console.log('Please install MetaMask!')
-      }
-    } catch (error) {
-      console.error('Error connecting to MetaMask:', error)
+    } else {
+        throw new Error('Please install MetaMask!')
     }
-  }
+    } catch (error: any) {
+    console.error('Error connecting to MetaMask:', error.message)
+    throw error
+    } finally {
+    setIsConnecting(false)
+    }
+}
 
-  const disconnect = () => {
+const disconnect = () => {
     setAddress(null)
     setChainId(null)
     setBalance(null)
     setIsConnected(false)
-  }
+}
 
-  useEffect(() => {
+useEffect(() => {
     const checkConnection = async () => {
-      if (typeof window.ethereum !== 'undefined') {
+    if (typeof window.ethereum !== 'undefined') {
         try {
-          const accounts = await window.ethereum.request({ method: 'eth_accounts' })
-          if (accounts.length > 0) {
+        const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+        if (accounts.length > 0) {
             const chainId = await window.ethereum.request({ method: 'eth_chainId' })
             const balance = await window.ethereum.request({
-              method: 'eth_getBalance',
-              params: [accounts[0], 'latest']
+            method: 'eth_getBalance',
+            params: [accounts[0], 'latest']
             })
 
             setAddress(accounts[0])
             setChainId(chainId)
             setBalance(balance)
             setIsConnected(true)
-          }
-        } catch (error) {
-          console.error('Error checking connection:', error)
         }
-      }
+        } catch (error) {
+        console.error('Error checking connection:', error)
+        }
+    }
     }
 
     checkConnection()
 
     if (typeof window.ethereum !== 'undefined') {
-      window.ethereum.on('accountsChanged', (accounts: string[]) => {
+    window.ethereum.on('accountsChanged', (accounts: string[]) => {
         if (accounts.length > 0) {
-          setAddress(accounts[0])
-          setIsConnected(true)
+        setAddress(accounts[0])
+        setIsConnected(true)
         } else {
-          disconnect()
-        }
-      })
-
-      window.ethereum.on('chainChanged', (chainId: string) => {
-        setChainId(chainId)
-      })
-
-      window.ethereum.on('disconnect', () => {
         disconnect()
-      })
+        }
+    })
+
+    window.ethereum.on('chainChanged', (chainId: string) => {
+        setChainId(chainId)
+    })
+
+    window.ethereum.on('disconnect', () => {
+        disconnect()
+    })
     }
 
     return () => {
-      if (typeof window.ethereum !== 'undefined') {
-        window.ethereum.removeListener('accountsChanged', () => {})
-        window.ethereum.removeListener('chainChanged', () => {})
-        window.ethereum.removeListener('disconnect', () => {})
-      }
+    if (typeof window.ethereum !== 'undefined') {
+        window.ethereum.removeListener('accountsChanged', disconnect)
+        window.ethereum.removeListener('chainChanged', disconnect)
+        window.ethereum.removeListener('disconnect', disconnect)
     }
-  }, [])
+    }
+}, [])
 
-  return (
+return (
     <AuthContext.Provider
-      value={{
+    value={{
         address,
         chainId,
         balance,
@@ -127,11 +131,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         isConnected,
         connect,
         disconnect
-      }}
+    }}
     >
-      {children}
+    {children}
     </AuthContext.Provider>
-  )
+)
 }
 
 export const useAuth = () => useContext(AuthContext)

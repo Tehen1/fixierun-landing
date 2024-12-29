@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
-import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
+import { useEffect,useRef, useState } from 'react'
 
 import { useEarlyAccess } from '@/contexts/EarlyAccessContext'
 

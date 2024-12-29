@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+
 import { ConnectButton } from './ui/ConnectButton'
 
 export default function Navbar() {

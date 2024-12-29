@@ -1,6 +1,7 @@
 'use client'
 
 import { useAuth } from '@/frontend/context/auth'
+
 import { Button } from './button'
 
 export function ConnectButton() {
@@ -17,7 +18,7 @@ const { isConnected, address, balance, connect, disconnect } = useAuth()
 
   return (
     <Button
-      variant="primary"
+    variant="default"
       onClick={isConnected ? disconnect : connect}
       className="flex items-center gap-2"
     >

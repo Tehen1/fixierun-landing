@@ -1,9 +1,10 @@
 'use client'
 
-import { Button } from './ui/button'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+
 import { useEarlyAccessPopup } from '../app/hooks/useEarlyAccessPopup'
+import { Button } from './ui/button'
 
 const stats = [
   { id: 1, name: 'Active Riders', value: '10K+' },
@@ -64,10 +65,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Button
-              variant="primary"
-              size="lg"
-              className="bg-gradient-to-r from-[#ff00b6] to-[#ff4d00] hover:from-[#ff00b6] hover:to-[#ff4d00] transition-all duration-300"
-              onClick={() => useEarlyAccessPopup.getState().open()}
+            variant="default"
+            size="lg"
+            className="bg-gradient-to-r from-[#ff00b6] to-[#ff4d00] hover:from-[#ff00b6] hover:to-[#ff4d00] transition-all duration-300"
+            onClick={() => useEarlyAccessPopup.getState().open()}
             >
               Get Early Access
             </Button>

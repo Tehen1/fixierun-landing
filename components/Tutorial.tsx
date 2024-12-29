@@ -1,7 +1,7 @@
 'use client';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiPlay, FiCheck } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiCheck,FiPlay } from 'react-icons/fi';
 
 const tutorialSteps = [
 {

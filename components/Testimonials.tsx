@@ -1,10 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { UserCircle2 } from 'lucide-react'
+import Image from 'next/image'
+import { useRef } from 'react'
 
 const testimonials = [
   {
