@@ -9,7 +9,11 @@ content: [
 ],
 theme: {
     extend: {
-    colors: {
+        fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Montserrat', 'system-ui', 'sans-serif'],
+        },
+        colors: {
         'custom-purple': '#ff00b6',
         'custom-purple-light': '#ff2d73',
         'custom-purple-dark': '#cc008f',
