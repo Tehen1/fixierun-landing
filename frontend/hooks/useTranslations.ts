@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect,useState } from 'react'
 
 type Translations = {
   [key: string]: {
@@ -37,7 +37,7 @@ export function useTranslations(locale: string = 'fr') {
   }, [])
 
   const t = (key: string): string => {
-    return translations[currentLocale]?.[key] || translations.en[key] || key
+    return translations[currentLocale][key] || translations.en[key] || key
   }
 
   return { t, currentLocale, setCurrentLocale }

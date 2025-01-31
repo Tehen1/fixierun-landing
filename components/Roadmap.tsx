@@ -1,7 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const roadmapPhases = [
@@ -58,7 +57,7 @@ export default function Roadmap() {
               variants={item}
               className="relative overflow-hidden rounded-2xl bg-gray-900 p-6 shadow-lg"
             >
-              <h3 className="text-lg font-semibold text-white">{phase.phase}</h3>
+            <h3 className="text-lg font-semibold text-[#ff00b6]">{phase.phase}</h3>
               <p className="mt-2 text-sm text-gray-400">{phase.description}</p>
               <p className="mt-2 text-sm text-indigo-400">{phase.status}</p>
             </motion.div>

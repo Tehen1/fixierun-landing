@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../fixierun-ethos"
+		},
+		{
+			"path": "../pedal-playground-main"
+		},
+		{
+			"path": "../CascadeProjects/fixie-run"
+		},
+		{
+			"path": "../CascadeProjects/FixieRun"
+		},
+		{
+			"path": "../CascadeProjects/FixieRun-next"
+		}
+	],
+	"settings": {
+		"files.trimTrailingWhitespace": true
+	}
+}

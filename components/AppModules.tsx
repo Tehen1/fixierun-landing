@@ -1,14 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import {
-  Timer,
-  Trophy,
   Map,
   Medal,
+  Timer,
+  Trophy,
 } from 'lucide-react'
+import { useRef } from 'react'
 
 const modules = [
   {
@@ -98,8 +97,8 @@ export default function AppModules() {
                   <module.icon className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 
-                <h3 className="mt-4 text-lg font-semibold leading-8 text-white">
-                  {module.name}
+                <h3 className="mt-4 text-lg font-semibold text-[#ff00b6] leading-8">
+                {module.name}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-gray-300">
                   {module.description}

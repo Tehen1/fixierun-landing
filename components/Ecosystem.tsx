@@ -1,17 +1,15 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { 
-  Server, 
-  Globe2,
   Bike,
+  Globe2,
   Heart,
   Leaf,
-  Users,
-  Shield
-} from 'lucide-react'
+  Server, 
+  Shield,
+  Users} from 'lucide-react'
+import { useRef } from 'react'
 
 const ecosystemComponents = [
   {
@@ -101,9 +99,9 @@ export default function Ecosystem() {
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Complete Ecosystem
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Discover FixieRun's interconnected components
-          </p>
+        <p className="mt-6 text-lg leading-8 text-gray-300">
+        Discover FixieRun&apos;s interconnected components
+        </p>
         </motion.div>
 
         <motion.div
@@ -121,7 +119,7 @@ export default function Ecosystem() {
               <div className={`inline-flex rounded-lg bg-gradient-to-r ${component.gradient} p-3`}>
                 <component.icon className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold leading-8 text-white">{component.name}</h3>
+            <h3 className="mt-4 text-lg font-semibold text-[#ff00b6] leading-8">{component.name}</h3>
               <p className="mt-2 text-base text-gray-300">{component.description}</p>
               <p className="mt-4 text-sm font-medium text-indigo-400">{component.status}</p>
             </motion.div>
@@ -159,7 +157,7 @@ export default function Ecosystem() {
               <div className={`inline-flex rounded-lg bg-gradient-to-r ${metric.gradient} p-3`}>
                 <metric.icon className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold leading-8 text-white">{metric.name}</h3>
+            <h3 className="mt-4 text-lg font-semibold text-[#ff00b6] leading-8">{metric.name}</h3>
               <p className="mt-2 text-base text-gray-300">{metric.description}</p>
               <p className="mt-4 text-sm font-medium text-indigo-400">{metric.status}</p>
             </motion.div>

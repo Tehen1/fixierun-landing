@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 
+import { useEarlyAccessPopup } from '../app/hooks/useEarlyAccessPopup'
+
 const races = [
   {
     id: 1,
@@ -56,7 +58,7 @@ export default function RaceSystem() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div>
-                <h3 className="text-lg font-semibold leading-8 text-white">
+                <h3 className="text-lg font-semibold leading-8 text-[#ff00b6]">
                   {race.name}
                 </h3>
                 <div className="mt-4 space-y-2">
@@ -82,13 +84,14 @@ export default function RaceSystem() {
                   </div>
                 </div>
               </div>
-              <motion.button
-                className="mt-4 w-full rounded-lg bg-blue-600 py-2 text-sm font-semibold text-white hover:bg-blue-700"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Rejoindre la course
-              </motion.button>
+            <motion.button
+            className="mt-4 w-full rounded-lg bg-blue-600 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => useEarlyAccessPopup.getState().open()}
+            >
+            Rejoindre la course
+            </motion.button>
             </motion.div>
           ))}
         </div>

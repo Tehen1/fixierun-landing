@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "deno.enablePaths": [
     "supabase/functions"
   ],
@@ -23,3 +24,7 @@
   },
   "CodeGPT.apiKey": "Perplexity"
 }
+=======
+    "files.trimTrailingWhitespace": true
+}
+>>>>>>> ad129e60bc68776a67b9c75604c9790a81ec5b85
